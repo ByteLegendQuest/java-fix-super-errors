@@ -13,7 +13,7 @@ public class CleanCatTest {
     @Test
     public void testSingle() {
         CleanCat cleanCat = new CleanCat("Tom");
-        Food food = new Food("Milk", System.currentTimeMillis() % 2 == 0);
+        Food food = new Food("Milk", true);
         cleanCat.eat(food);
         Assertions.assertEquals(
                 "Tom has eaten "
