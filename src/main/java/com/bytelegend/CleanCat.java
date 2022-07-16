@@ -6,7 +6,7 @@ public class CleanCat extends Cat {
 
     @Override
     public void eat(Food food) {
-        if (!food.isClean()) {
+        if (food.isClean()) {
             eat(food);
         }
     }
