@@ -9,7 +9,7 @@ public class CleanCat extends Cat {
     @Override
     public void eat(Food food) {
         if (food.isClean()) {
-            eat(food);
+            super.eat(food);
         }
     }
 }
