@@ -1,13 +1,24 @@
 package com.bytelegend;
 
-/** `CleanCat` inherits from `Cat` class, but it only eats clean food (`food.isClean()`). */
+import java.util.List;
+
+/**
+ * `CleanCat` inherits from `Cat` class, but it only eats clean food (`food.isClean()`).
+ */
 public class CleanCat extends Cat {
-    public CleanCat(String name) {}
+    public CleanCat(String name) {
+        super(name);
+    }
 
     @Override
     public void eat(Food food) {
-        if (!food.isClean()) {
-            eat(food);
+        if (food.isClean()) {
+            super.eat(food);
         }
+    }
+
+    @Override
+    public void eat(List<Food> foods) {
+        foods.stream().filter(Food::isClean).forEach(super::eat);
     }
 }
