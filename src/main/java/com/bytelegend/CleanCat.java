@@ -12,15 +12,4 @@ public class CleanCat extends Cat {
             super.eat(food);
         }
     }
-
-    @Override
-    public void eat(List<Food> foods) {
-        List<Food> list = new ArrayList<>();
-        for(Food f : foods)
-        {
-            if(f.isClean())
-                list.add(f);
-        }
-        super.eat(list);
-    }
 }
