@@ -13,4 +13,3 @@ public class CleanCat extends Cat {
         }
     }
 }
- 
