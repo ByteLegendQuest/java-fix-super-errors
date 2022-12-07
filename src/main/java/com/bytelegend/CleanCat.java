@@ -12,7 +12,8 @@ public class CleanCat extends Cat {
             super.eat(food);
         }
     }
-
+    
+    @Override
     public void eat(List<Food> foodList) {
         List<Food> foods = foodList.stream().filter(Food::isClean).collect(Collectors.toList());
         super.eat(foods);
