@@ -1,5 +1,8 @@
 package com.bytelegend;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 /** `CleanCat` inherits from `Cat` class, but it only eats clean food (`food.isClean()`). */
 public class CleanCat extends Cat {
     public CleanCat(String name) {
@@ -15,10 +18,7 @@ public class CleanCat extends Cat {
 
     @Override
     public void eat(List<Food> foodList) {
-        for (Food food:foodList) {
-            if (food.isClean()) {
-                super.eat(food);
-            }
-        }
+        List<Food> foods = foodList.stream().filter(Food::isClean).collect(Collectors.toList());
+        super.eat(foods);
     }
 }
