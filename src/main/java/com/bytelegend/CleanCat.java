@@ -6,8 +6,17 @@ public class CleanCat extends Cat {
 
     @Override
     public void eat(Food food) {
-        if (!food.isClean()) {
-            eat(food);
+        if (food.isClean()) {
+            super.eat(food);
+        }
+    }
+
+    @Override
+    public void eat(List<Food> foodList) {
+        for(Food food:foodList){
+            if (food.isClean()) {
+                super.eat(food);
+            }
         }
     }
 }
