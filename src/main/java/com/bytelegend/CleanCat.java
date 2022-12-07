@@ -13,7 +13,7 @@ public class CleanCat extends Cat {
 
     @Override
     public void eat(List<Food> foodList) {
-        for(Food food:foodList){
+        for (Food food:foodList) {
             if (food.isClean()) {
                 super.eat(food);
             }
