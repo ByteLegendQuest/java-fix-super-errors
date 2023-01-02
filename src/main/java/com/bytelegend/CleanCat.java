@@ -13,7 +13,7 @@ public class CleanCat extends Cat {
     @Override
     public void eat(Food food) {
         if (food.isClean()) {
-            eat(food);
+            super.eat(food);
         }
     }
 
@@ -21,8 +21,9 @@ public class CleanCat extends Cat {
     public void eat(List<Food> foods) {
         for (Food food : foods) {
             if (food.isClean()) {
-                eat(food);
+                super.eat(food);
             }
         }
     }
+
 }
